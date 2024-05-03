@@ -1,0 +1,30 @@
+.card {
+    /* background-color: white; */
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:'flex-start'
+  }
+  .select {
+    width: 25px; /* Adjust size as needed */
+    height: 25px; /* Adjust size as needed */
+    border-radius: 50%; /* Make it a circle */
+    background-color: rgb(225, 221, 221); 
+  }
+  
+  .select:hover {
+    background-color: rgba(4, 120, 22, 0.639); /* Change background color on hover */
+  }
+  
+  .name {
+    /* text-align: center; */
+    padding: 0.5rem;
+    width: 90%;
+  }
+
+
+.item{
+    width: 100%;
+}
