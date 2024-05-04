@@ -7,7 +7,7 @@ function TodoCard() {
 
   const nameInputRef = useRef();
 
-  function submitHandler(event) {
+  async function submitHandler(event) {
     event.preventDefault();
 
     const enteredName = nameInputRef.current.value;
@@ -15,16 +15,32 @@ function TodoCard() {
     const todoData = {
       name: enteredName,
     };
-    alert(todoData.name);
-    setTodoList(todoData);
+    
+    // const response = await fetch('/api/todo-input',{
+    //     method: 'POST',
+    //     body: JSON.stringify(todoData),
+    //     headers: {
+    //         'Content-Type': 'application/json'
+    //     }
+    // });
+    
+    const response = await fetch(
+      `https://crudcrud.com/api/4307f38ee7274e5fa30e6ef92ac1d952/todo-input`,
+      {
+        method: "POST",
+        body: JSON.stringify(todoData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    // const data = await response.json();
+    if (response.ok) {
+        alert('added succesfully..')
+    }
+    nameInputRef.current.value = '';
     // props.onAddMeetup(meetupData);
   }
-
-  const addTodo = async () => {
-  };
-
-  const deleteTodo = async (id) => {
-  };
 
 
 
