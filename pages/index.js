@@ -13,6 +13,9 @@ function HomePage({ todoList }) {
 
   return (
     <Fragment>
+      <div style={{ marginLeft: "220px", marginTop: "20px" }}>
+        <h3>Today</h3>
+      </div>
       <div style={{ display: "flex", alignItems: "center", justifyContent: "flex-start", marginLeft: "220px", marginTop: "20px" }}>
         <ul className={classes.list}>
           {todoList.map((item) => (
